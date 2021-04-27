@@ -39,4 +39,4 @@ dashboard.
 
 ## Test
 
-Navigate to `https://your-domain.com/embed/52e31035-56c9-4928-ad78-d8e7604ce88f` to see the dashboard running.
+Navigate to `https://your-domain.com/embed/96ca61b1-da6c-446e-a3df-86c07c1ed430` to see the dashboard running.
