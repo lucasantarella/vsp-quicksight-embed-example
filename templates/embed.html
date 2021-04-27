@@ -8,11 +8,19 @@
     <script type="text/javascript">
         var dashboard;
 
+        function onDashboardLoad(payload) {
+            console.log("Do something when the dashboard is fully loaded.");
+        }
+
+        function onError(payload) {
+            console.log("Do something when the dashboard fails loading");
+        }
+
         function embedDashboard() {
             var containerDiv = document.getElementById("embeddingContainer");
             var options = {
                 // replace this dummy url with the one generated via embedding API
-                url: "{{ embed_url }}",
+                url: "{{ embed_url | safe }}",
                 container: containerDiv,
                 scrolling: "no",
                 height: "700px",
@@ -20,6 +28,8 @@
                 footerPaddingEnabled: true
             };
             dashboard = QuickSightEmbedding.embedDashboard(options);
+            dashboard.on("error", onError);
+            dashboard.on("load", onDashboardLoad);
         }
     </script>
 </head>
